@@ -12,7 +12,7 @@
 
 | Stage      | Goal                                                                      | Completion Goal |
 | ---------- | ------------------------------------------------------------------------- | --------------- |
-| **V0.0.2** | Server setup and PostgreSQL connection                                    | `2024-10-25`    |
+| **V0.0.2** | Server setup and PostgreSQL connection                                    | `2024-10-31`    |
 | **V0.0.5** | EC2 deployment and performance optimization                               | `2024-`         |
 | **V0.0.6** | Feature improvements based on user feedback (search, tags, notifications) | `2024-`         |
 | **V1.0.1** | User registration and login features with session management              | `2024-`         |
