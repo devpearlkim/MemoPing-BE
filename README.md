@@ -1,121 +1,103 @@
-# MemoPing 메모핑 📒✨
+# MemoPing 📒✨
 
-> 메모를 간단히 기록할 수 있는 메모핑! 메모가 어렵다구? 메모핑과 함께 간단하고 쉽게 메모할 수 있어!  
-> 실시간 동기화를 통해 누구나 쉽게 메모를 관리할 수 있는 간단한 웹 애플리케이션입니다.  
-> 프로젝트를 시작한 계기: https://devpearl.tistory.com/15
+> MemoPing allows you to easily jot down notes! Is note-taking difficult for you? With MemoPing, you can create memos simply and effortlessly!  
+> This is a simple web application that allows anyone to manage their notes easily through real-time synchronization.  
+> Reason for starting the project: [Read More](https://devpearl.tistory.com/15)
 
-# MemoPing Backend 🛠️
+## Current Version
 
-> Express와 PostgreSQL을 사용한 간단한 메모 API 서버.  
-> 실시간 동기화를 통해 메모 데이터를 관리할 수 있는 RESTful API 서버입니다.
+- **v0.0.2**: Server setup and PostgreSQL connection implemented.
 
-## Overview
+## Version Roadmap
 
-A backend server for MemoPing built with Node.js, Express, and PostgreSQL using Prisma as an ORM. The server handles memo data and synchronizes it in real-time using WebSocket capabilities.
+| Stage      | Goal                                                                      | Completion Goal |
+| ---------- | ------------------------------------------------------------------------- | --------------- |
+| **V0.0.2** | Server setup and PostgreSQL connection                                    | `2024-10-25`    |
+| **V0.0.5** | EC2 deployment and performance optimization                               | `2024-`         |
+| **V0.0.6** | Feature improvements based on user feedback (search, tags, notifications) | `2024-`         |
+| **V1.0.1** | User registration and login features with session management              | `2024-`         |
+| **V1.0.3** | Real-time synchronization using WebSocket                                 | `2024-`         |
+| **V1.0.4** | Implementation of GraphQL server                                          | `2024-`         |
 
-## Features
+### Development Timeline
 
-- 📝 **Create Memo**: API to add new memos.
-- 📄 **Read Memo**: Retrieve a list of all memos.
-- 🗑️ **Delete Memo**: Remove specific memos by ID.
-- ✅ **Test Code**: Applied with Vitest for backend testing.
+### **V0.0.2: Server Setup and PostgreSQL Connection**
 
-## Tech Stack
+> **Goal**: Set up Express server and PostgreSQL database, write API routes, and integrate with the database, including writing test codes with Vitest.
 
-- **Backend**: Node.js, Express
-- **Database**: PostgreSQL + Prisma
-- **Testing**: Vitest
-
-## Development Timeline
-
-### **V0.0.2: 서버 구축 및 PostgreSQL 연결**
-
-> **목표**: Express 서버와 PostgreSQL 데이터베이스 설정, API 라우트 작성 및 데이터베이스 연동, Vitest로 테스트 코드 작성.
-
-- **기능 구현**:
-  - Express 서버 설정 및 기본 라우트 구축.
-  - PostgreSQL 연결 및 Prisma 스키마 정의.
-  - CRUD API 엔드포인트 구현 (`POST /memos`, `GET /memos`, `DELETE /memos/:id`).
-  - 서버 및 데이터베이스 관련 단위 테스트 작성 (Vitest).
-- **완료 목표**: `2024-10-25`
-- **작업 기간**: `2024-10-23 ~ `
+- **Feature Implementation**:
+  - Set up Express server and basic route structure.
+  - Connect to PostgreSQL and define Prisma schema.
+  - Implement CRUD API endpoints (`POST /memos`, `GET /memos`, `DELETE /memos/:id`).
+  - Write unit tests for server and database using Vitest.
+- **Completion Goal**: `2024-10-25`
+- **Development Period**: `2024-10-23 ~ `
 
 ---
 
-### **V0.0.5: EC2 배포 및 성능 최적화**
+### **V0.0.5: EC2 Deployment and Performance Optimization**
 
-> **목표**: AWS EC2 인스턴스에 기본적인 메모 기능과 사용자 인증 시스템이 완비된 상태에서 첫 번째 프로덕션 환경 배포.
+> **Goal**: Deploy to AWS EC2 instance in a stable production environment with basic memo functionality and user authentication system.
 
-- **기능 구현**:
-  - EC2 인스턴스 설정 및 배포 환경 구성.
-  - PostgreSQL 데이터베이스와 Prisma 연결 설정.
-  - 기본 메모 기능과 사용자 인증을 포함한 API 안정화.
-  - Nginx 또는 Apache를 사용한 리버스 프록시 설정.
-  - 배포 후 기본 테스트 및 성능 모니터링 설정.
-- **완료 목표**: `2024-`
-
----
-
-### **V0.0.6: 사용자 피드백에 따른 기능 개선**
-
-> **목표**: 사용자 피드백을 반영하여 메모 검색 기능, 해시태그 추가, 알림 기능을 구현해 사용자 경험을 향상.
-
-- **기능 구현**:
-  - 메모 내용과 제목을 기준으로 하는 검색 기능 (`GET /memos?search=keyword`).
-  - 해시태그 기능 추가 및 관련 필터링 (`GET /memos?tags=tag1,tag2`).
-  - 새로운 메모 작성 및 수정 시 실시간 알림 기능 구현.
-  - 개선된 기능에 대한 테스트 작성 및 API 문서화.
-- **완료 목표**: `2024-`
+- **Feature Implementation**:
+  - Configure EC2 instance and deployment environment.
+  - Set up PostgreSQL database and Prisma connection.
+  - Stabilize API including basic memo functionality and user authentication.
+  - Set up a reverse proxy using Nginx or Apache.
+  - Perform basic tests and set up performance monitoring after deployment.
+- **Completion Goal**: `2024-`
 
 ---
 
-### **V1.0.1: 사용자 인증 및 세션 관리**
+### **V0.0.6: Feature Improvements Based on User Feedback**
 
-> **목표**: 사용자 인증 시스템 구현, 회원가입 및 로그인 기능을 통해 사용자의 접근을 제한하고 사용자 기반의 메모 관리 구현.
+> **Goal**: Enhance user experience by implementing memo search functionality, adding hashtags, and notification features based on user feedback.
 
-- **기능 구현**:
-  - 사용자 등록 기능 (`POST /register`).
-  - 사용자 로그인 기능 (`POST /login`).
-  - JWT 또는 세션을 이용한 인증 관리.
-  - 인증된 사용자만 메모 작성 및 조회 가능하도록 API 보호.
-  - Vitest를 통한 인증 관련 테스트 작성.
-- **완료 목표**: `2024-`
-
----
-
-### **V1.0.3: WebSocket 설정을 통한 실시간 데이터 동기화**
-
-> **목표**: 사용자가 메모를 작성하거나 수정할 때 WebSocket을 사용하여 실시간 데이터 동기화.
-
-- **기능 구현**:
-  - WebSocket 서버 설정 및 클라이언트 통신 처리.
-  - 메모 CRUD 시 WebSocket을 통한 실시간 데이터 전송.
-  - Vitest를 이용한 실시간 데이터 동기화 테스트 작성.
-- **완료 목표**: `2024-`
+- **Feature Implementation**:
+  - Implement search functionality based on memo content and title (`GET /memos?search=keyword`).
+  - Add hashtag feature and related filtering (`GET /memos?tags=tag1,tag2`).
+  - Implement real-time notification functionality when creating or updating memos.
+  - Write tests and document the improved features.
+- **Completion Goal**: `2024-`
 
 ---
 
-### **V1.0.4: GraphQL 서버 적용**
+### **V1.0.1: User Authentication and Session Management**
 
-> **목표**: GraphQL을 통해 더 유연한 데이터 요청 및 처리, Prisma와 GraphQL의 통합.
+> **Goal**: Implement a user authentication system, allowing user registration and login to restrict access and manage memos based on users.
 
-- **기능 구현**:
-  - GraphQL 서버 설정 및 스키마 정의.
-  - Prisma를 통한 GraphQL Resolver 작성.
-  - 메모 CRUD 작업을 GraphQL로 구현.
-  - Vitest를 통한 GraphQL API 테스트 작성.
-- **완료 목표**: `2024-`
+- **Feature Implementation**:
+  - User registration functionality (`POST /register`).
+  - User login functionality (`POST /login`).
+  - Manage authentication using JWT or sessions.
+  - Protect API so that only authenticated users can create and view memos.
+  - Write tests related to authentication using Vitest.
+- **Completion Goal**: `2024-`
 
-## **Backend Timeline Summary**
+---
 
-| 단계       | 목표                                                  | 완료 목표 |
-| ---------- | ----------------------------------------------------- | --------- |
-| **V0.0.2** | 서버 구축 및 PostgreSQL 연결                          | `2024-`   |
-| **V0.0.5** | EC2 배포 및 성능 최적화                               | `2024-`   |
-| **V0.0.6** | 사용자 피드백에 따른 기능 개선 (검색, 해시태그, 알림) | `2024-`   |
-| **V1.0.1** | 로그인 및 회원가입 기능 추가 및 세션 관리             | `2024-`   |
-| **V1.0.3** | WebSocket을 통한 실시간 동기화                        | `2024-`   |
-| **V1.0.4** | GraphQL 서버 적용                                     | `2024-`   |
+### **V1.0.3: Real-time Data Synchronization Using WebSocket**
+
+> **Goal**: Use WebSocket for real-time data synchronization when users create or modify memos.
+
+- **Feature Implementation**:
+  - Set up WebSocket server and handle client communication.
+  - Transmit data in real-time via WebSocket during memo CRUD operations.
+  - Write tests for real-time data synchronization using Vitest.
+- **Completion Goal**: `2024-`
+
+---
+
+### **V1.0.4: Implementation of GraphQL Server**
+
+> **Goal**: Use GraphQL for more flexible data requests and handling, integrating Prisma with GraphQL.
+
+- **Feature Implementation**:
+  - Set up GraphQL server and define schema.
+  - Write GraphQL resolvers using Prisma.
+  - Implement memo CRUD operations using GraphQL.
+  - Write tests for GraphQL API using Vitest.
+- **Completion Goal**: `2024-`
 
 ## API Documentation
 
@@ -126,3 +108,7 @@ A backend server for MemoPing built with Node.js, Express, and PostgreSQL using 
 - `GET /memos?search=keyword`: Search for memos by keyword.
 - `GET /memos?tags=tag1,tag2`: Filter memos by hashtags.
 - `DELETE /memos/:id`: Delete a memo by its ID.
+
+## Version Information
+
+For detailed version information, please refer to the [CHANGELOG.md](./CHANGELOG.md).
